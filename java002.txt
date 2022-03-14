@@ -1,0 +1,278 @@
+Encaptulation
+	Mixture of fields and methods.
+	
+	Data Binding
+	
+	
+	
+	class
+		fields
+		methods
+
+class Account {
+	private int acc_id;
+	private String name;
+	
+	public void setAccountID(int acc_id) {
+		this.acc_id = acc_id;
+	}
+	
+	
+}
+
+
+balance = 10000;
+amount = 14000;
+
+balance = balance - amount;
+
+balance = 10000 - 14000
+        = -4000
+
+Abstraction
+	We know there is something.
+	We dont know what is that?
+
+1. abstract  classes === > 0%  to 100% abstraction
+
+	1. abstract method ==> the method without the body.
+	
+	2. if a class is defined with atleast one abstract method, that class can be called as an abstract class.
+	
+	3. We should not create any object for an abstract class. 
+	
+	4. Abstract class must be a base class.
+	
+	5. There must be atleast one derived class for an abstract class.
+	
+	6. In derived class(es) we must overide the abstract method(s) of the abstract class.
+	
+	
+	
+
+2. interfaces ===> 100% abstraction
+
+
+
+sh1.draw();
+
+public abstract class Shape {
+	.
+	.
+	.
+	.
+	
+	public abstract void area();
+	
+	public void hello() {
+		s.o.p("Hello");
+	}
+
+}
+
+
+Shape s = new Shape(); ==> this is an error because we cannot create object for abstract class.
+
+s.hello();
+
+s.area(); 
+
+class Circle extends Shape {
+
+	.
+	.
+	.
+	.
+	
+	@Overide
+	public void area() {
+		double area = Math.PI * r * r;
+	}
+}
+
+class Rectangle extends Shape {
+
+	.
+	.
+	.
+	.
+	
+	@Overide
+	public void area() {
+		double area = l * w;
+	}
+}
+
+
+=============================
+Overloading
+	Same method with different parameters(no of parameters and type of parameters)
+	
+	Compiler takes care about method overloading.
+
+	If count of parameters is same, then type of parameters should be changed. 
+
+	You can write overloading methods inside the same class, or in derived class.
+	
+	It is static polymarphism.
+	
+	
+	
+	public class Calculator {
+		public int add(int n1, int n2) { // 2 parameters
+			return n1 + n2;
+		}
+		
+		public int add(int n1, int n2, int n3) { // 3 parameters
+			return n1 + n2 + n3;
+		}
+		
+		public double add(double n1, double n2) { // 2 			
+									parameters , type is double
+		return n1 + n2;
+	}
+		
+		p.v.s.m(..) {
+			Calculator c1 = new Calculator();
+			
+			s.o.p("Sum = " + c1.add(10,20));
+			s.o.p("Sum = " + c1.add(10,20,30));
+		}
+	}
+	
+	
+	
+Overriding
+	If the method with same parameters, again if you write in derived class, then it is called overriding a method.
+	
+	Use  @Override to specify that you are overriding a method.
+	
+	Method in base class only you can override in derived class.
+	
+	It is dynamic polymarphism.
+	
+
+
+
+
+===============================
+
+Use of this 
+
+	1. this is keyword
+
+	2. this is used to refer current class's instance.
+	
+	3. when you call this() method, this line should be first line in that method.
+	
+	4. this() can be called to invoke current class constructor(s). 
+	
+	5. A method in the class can return this.
+	
+	6. To refer static member field, you can use this.
+	
+	
+	
+
+Use of super keyword
+	1. super is a keyword
+	
+	2. Whenever you want to refer base class fields, methods, constructors you will be using super.
+	
+this() and super() cannot be called at once inside a method or constructor.
+
+But you can eighther of this() or super(). 
+
+
+Static Binding
+	
+Dynamic Binding
+	
+=======================
+Wrapper Classes
+	Primitive   =========== Wrapper Class
+	1. boolean              1. Boolean
+	
+	2. byte                 2. Byte
+	
+	3. char                 3. Character
+	
+	4. float                4. Float
+	
+	5. int                  5. Integer
+	
+	6. long                 6. Long
+	
+	7. short                7. Short
+	
+	8. double               8. Double
+	
+	Wrapper classes wraps a corresponding primitive types.
+	
+	Character ch = 'L';
+	
+	Integer n = 123;
+	
+	WC = PT
+	
+	
+	
+	
+Boxing and un-boxing
+
+Boxing :- Automatic conversion that the java compiler makes between the primitive type and their corresponding object wrapper class.
+
+int n=123;
+
+Integer v = n;
+
+Un-boxing:- If the conversion goes from wrapper class object to primitive type.
+
+Integer  a = 100;
+
+int n2 = a;
+
+
+
+
+Object class in java class library.
+	Whenever we create a class , our class automatically inherits from the Object class.
+	
+	
+
+
+
+Garbage Collection
+	1. Java garbage collection is the process of which java programs perform automatic memory management.
+	
+	2. As programmers we cant destruct the memory allocated for the objects.
+	
+	3. The garbage collector will always look at our program to collect the un-used objects.
+	
+	4. The java garbage collection is an automatic process.
+	
+	5. The garbage collection implementation lives in the JVM.
+	
+	
+
+
+Finalize
+	1. finalize() is the method of Object class.
+	
+	2. You can override finalize() of object class.
+	
+	3. Once if you override finalize() method, and if you call System.gc(), now finalize() method will be executed automatically.
+	
+	4. finalize() method will be called by the garbage collector just before the ojbect will get deleted.
+
+Garbage collection is the procedure of automatically recovering the unused runtime memory. The process getsridofall unwanted objects. Garbage collection occurs during a program life cycle, effectively minimizing the necessityofmemory de-allocation. This process helps to reduce memory leak possibilities. De-allocating memory alsoreducesthechances of programs crashing.
+
+
+	
+
+Difference between final, finally and finalize
+
+
+
+======================================================
+
